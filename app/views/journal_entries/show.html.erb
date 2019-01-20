@@ -1,8 +1,25 @@
-<%= @journal_entry.date %>
-<%= link_to 'Add Exercise', exercises_new_path(journal_entry_id: @journal_entry.id) %>
-<%= link_to 'Yesterday', select_date_path(date: @journal_entry.date - 1.day) %>
-<%= link_to 'Tomorrow', select_date_path(date: @journal_entry.date + 1.day) %>
+<div class="journal-header">
+  <p><%= link_to 'Yesterday', select_date_path(date: @journal_entry.date - 1.day) %></p>
+  <h1 class="header"><%= @journal_entry.date %></h1>
+  <p><%= link_to 'Tomorrow', select_date_path(date: @journal_entry.date + 1.day) %></p>
+</div>
 
-<% @exercises.each do |e| %>
-  <%= e.exercise %>
-<% end %>
+<div class="exercises">
+  <% @exercises.each do |e| %>
+    <div class="exercise-details">
+      <h3 class="exercise">
+        <%= e.exercise %>
+      </h3>
+
+      <p class="exercise-row">
+        Sets: <%= e.sets %>, Reps: <%= e.reps %>, Lbs: <%= e.weight_in_lbs %>
+      </p>
+      <p class="large-row exercise-row">
+        Notes:
+        <%= e.notes %>
+      </p>
+    </div>
+  <% end %>
+
+  <%= link_to '+ Add Exercise', exercises_new_path(journal_entry_id: @journal_entry.id), class: "link" %>
+</div>
