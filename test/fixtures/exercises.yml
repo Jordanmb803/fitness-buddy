@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jounal_entry_id: 1
+  exercise: MyString
+  weight_in_lbs: 1
+  reps: 1
+  sets: 1
+
+two:
+  jounal_entry_id: 1
+  exercise: MyString
+  weight_in_lbs: 1
+  reps: 1
+  sets: 1

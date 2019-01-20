@@ -1,0 +1,9 @@
+<%= @journal_entry.date %>
+<% puts "view date: *************#{@journal_entry.date}"%>
+<%= link_to 'Add Exercise', exercises_new_path(journal_entry_id: @journal_entry.id) %>
+<%= link_to 'Yesterday', select_date_path(date: @journal_entry.date - 1.day) %>
+<%= link_to 'Tomorrow', select_date_path(date: @journal_entry.date + 1.day) %>
+
+<% @exercises.each do |e| %>
+  <%= e.exercise %>
+<% end %>
