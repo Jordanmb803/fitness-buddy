@@ -26,6 +26,14 @@ class ExercisesController < ApplicationController
     redirect_to journal_entries_show_path(@journal_entry)
   end
 
+  def destroy
+    @exercise = Exercise.find(params[:id])
+    @journal_entry = JournalEntry.find(@exercise.journal_entry_id)
+    @exercise.destroy
+
+    redirect_to journal_entries_show_path(@journal_entry)
+  end
+
   private
   def exercise_params
     params.require(:exercise).permit(:date, :exercise, :weight_in_lbs, :reps, :sets, :notes)

@@ -5,18 +5,24 @@
 </div>
 
 <div class="exercises">
-  <% @exercises.each do |e| %>
+  <% @exercises.each do |exercise| %>
     <div class="exercise-details">
       <h3 class="exercise">
-        <%= e.exercise %>
+        <%= exercise.exercise %>
       </h3>
 
-      <p class="exercise-row">
-        Sets: <%= e.sets %>, Reps: <%= e.reps %>, Lbs: <%= e.weight_in_lbs %>
-      </p>
+      <div class="exercise-row">
+        <p class="e-r-contents">
+          Sets: <%= exercise.sets %>, Reps: <%= exercise.reps %>, Lbs: <%= exercise.weight_in_lbs %>
+        </p>
+        <p class="e-r-contents">
+        <% puts "exercise id: #{exercise.id}"%>
+          <%= link_to '...', exercise_path(exercise), method: :delete, class: "destroy-link" %>
+        </p>
+      </div>
       <p class="large-row exercise-row">
         Notes:
-        <%= e.notes %>
+        <%= exercise.notes %>
       </p>
     </div>
   <% end %>
