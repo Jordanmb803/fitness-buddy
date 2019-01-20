@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190119040107) do
+ActiveRecord::Schema.define(version: 20190120195528) do
 
   create_table "exercises", force: :cascade do |t|
     t.integer  "journal_entry_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20190119040107) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.date     "date"
+    t.string   "notes"
   end
 
   create_table "journal_entries", force: :cascade do |t|
