@@ -15,8 +15,7 @@ class ExercisesController < ApplicationController
 
   def new
     @last_session = Exercise.where(exercise: params[:exercise]).last
-    puts "last session: #{@last_session.exercise} #{@last_session.weight_in_lbs} #{@last_session.sets} #{@last_session.reps} *****************"
-    @exercise = Exercise.find_by(exercise: params[:exercise])
+    @exercise = Exercise.where(exercise: params[:exercise]).last
     @exercise ||= Exercise.new
   end
 
