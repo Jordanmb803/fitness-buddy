@@ -3,15 +3,15 @@ Rails.application.routes.draw do
 
   get 'exercises/show'
 
-  get 'exercises/new'
+  post 'exercises/new'
 
   get 'journal_entries/show'
 
-  get 'yesterday', to: 'exercises#yesterday', as: :yesterday
-
   get 'select_date', to: 'journal_entries#select_date', as: :select_date
 
-  resources :exercises, :journal_entries
+  get 'search', to: 'exercises#search', as: :exercise_search
+
+  resources :exercises, :journal_entries, :exercise
 
   root 'journal_entries#show'
 

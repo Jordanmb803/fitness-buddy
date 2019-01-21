@@ -1,29 +1,43 @@
 require 'date'
 
 class ExercisesController < ApplicationController
-  attr_accessor :journal_entry_id, :date
-
-  def initialize
-  end
-
+  attr_accessor :journal_entry_id, :date, :exercise
   def index
   end
 
   def show
   end
 
-  def new
+  def search
+    @journal_entry = JournalEntry.find(params[:journal_entry_id])
     @exercise = Exercise.new
   end
 
-  def create
-    @exercise = Exercise.new(exercise_params)
+  def new
+    @last_session = Exercise.find_by(exercise: params[:exercise])
+    @exercise = Exercise.find_by(exercise: params[:exercise])
+    @exercise ||= Exercise.new
+  end
+
+  def update
+    @exercise = Exercise.find(params[:id])
+    @exercise.update(exercise_params)
     @exercise.save
     @journal_entry = JournalEntry.find_by(date: @exercise.date)
     @exercise.update(journal_entry_id: @journal_entry.id)
     @exercise.save
 
-    redirect_to journal_entries_show_path(@journal_entry)
+    redirect_to journal_entry_path(@journal_entry)
+  end
+
+  def create
+    @exercise = Exercise.create(exercise_params)
+    @exercise.save
+    @journal_entry = JournalEntry.find_by(date: @exercise.date)
+    @exercise.update(journal_entry_id: @journal_entry.id)
+    @exercise.save
+
+    redirect_to journal_entry_path(@journal_entry)
   end
 
   def destroy

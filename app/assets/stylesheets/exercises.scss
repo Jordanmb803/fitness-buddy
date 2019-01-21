@@ -1,3 +1,26 @@
-// Place all the styles related to the exercises controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+form {
+  width: 50%;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0;
+  border-width: 0;
+}
+
+.new-exercise-details {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 2px;
+}
+
+.new-exercise-label {
+  background-color: #00548f;
+  color: white;
+  margin: 0;
+}
+
+#something {
+  color: pink;
+}

@@ -1,0 +1,9 @@
+<% if @last_session.nil? %>
+  <p id="something">Never done this exercise before</p>
+<% else %>
+  <%= @last_session.exercise %>
+  <%= @last_session.weight_in_lbs %>
+  <%= @last_session.sets %>
+  <%= @last_session.reps %>
+  <%= @last_session.notes %>
+<% end %>
