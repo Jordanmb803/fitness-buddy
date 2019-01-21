@@ -1,15 +1,16 @@
+<% puts "#{@exercise.exercise}, #{@exercise.weight_in_lbs}, #{@exercise.sets}, #{@exercise.reps}"%>
 <%= form_for @exercise, url: exercises_path, method: :post do |form| %>
-    <p id="something"><%= form.label :exercise %></p>
-    <p id="something"><%= form.text_field :exercise %></p>
-    <p id="something"><%= form.label :weight_in_lbs %></p>
-    <p id="something"><%= form.text_field :weight_in_lbs %></p>
-    <p id="something"><%= form.label :sets %></p>
-    <p id="something"><%= form.text_field :sets %></p>
-    <p id="something"><%= form.label :reps %></p>
-    <p id="something"><%= form.text_field :reps %></p>
-    <p id="something"><%= form.label :date %></p>
-    <p id="something"><%= form.date_select :date %></p>
-    <p id="something"><%= form.label :notes %></p>
-    <p id="something"><%= form.text_area :notes %></p>
-    <p id="something"><%= form.submit %></p>
+    <p class="new-exercise-label"><%= form.label :exercise %></p>
+    <p class="new-exercise-input"><%= form.text_field :exercise %></p>
+    <p class="new-exercise-label"><%= form.label :weight_in_lbs %></p>
+    <p class="new-exercise-input"><%= form.text_field :weight_in_lbs %></p>
+    <p class="new-exercise-label"><%= form.label :sets %></p>
+    <p class="new-exercise-input"><%= form.text_field :sets %></p>
+    <p class="new-exercise-label"><%= form.label :reps %></p>
+    <p class="new-exercise-input"><%= form.text_field :reps %></p>
+    <p class="new-exercise-label"><%= form.label :date %></p>
+    <p class="new-exercise-date-select"><%= form.date_select :date %></p>
+    <p class="new-exercise-label"><%= form.label :notes %></p>
+    <p class="new-exercise-text-area"><%= form.text_area :notes %></p>
+    <%= form.submit "Submit Exercise", class: "submit-exercise" %>
 <% end %>
