@@ -1,6 +1,6 @@
-<%= form_tag exercises_new_path  do %>
-  <p>What exercise are you doing?</p>
+<%= form_tag exercises_new_path, class: "search-exercise"  do %>
+  <h2 class="exercise-search-title">What exercise are you doing?</h2>
   <%= text_field_tag :exercise %>
 
-  <%= submit_tag %>
+  <%= submit_tag 'Search Exercise', class: "submit-exercise-search" %>
 <% end %>

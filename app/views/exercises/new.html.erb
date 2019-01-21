@@ -1,2 +1,4 @@
-<%= render "new" %>
-<%= render "last_session" %>
+<div class="new-exercise">
+  <%= render "new" %>
+  <%= render "last_session", locals: { last_session: @last_session } %>
+</div>

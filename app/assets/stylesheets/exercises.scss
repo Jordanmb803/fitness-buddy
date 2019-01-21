@@ -8,6 +8,38 @@ input, textarea {
   border-width: 0;
 }
 
+.search-exercise {
+  width: 100%;
+  background-color: #00548f;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.exercise-search-title {
+  color: white;
+}
+
+#exercise {
+  height: 50px;
+}
+
+.submit-exercise-search {
+  margin: 10px;
+  background: #0072bc;
+  color:  white;
+  width: 50%;
+  height: 50px;
+}
+
+.new-exercise {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .new-exercise-details {
   box-sizing: border-box;
   width: 100%;
