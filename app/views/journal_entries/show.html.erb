@@ -1,4 +1,4 @@
-
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 
 <div class="journal-header">
   <p><%= link_to 'Yesterday', select_date_path(date: @journal_entry.date - 1.day) %></p>
@@ -18,7 +18,6 @@
           Sets: <%= exercise.sets %>, Reps: <%= exercise.reps %>, Lbs: <%= exercise.weight_in_lbs %>
         </p>
         <p class="e-r-contents">
-        <% puts "exercise id: #{exercise.id}"%>
           <%= link_to '...', exercise_path(exercise), method: :delete, class: "destroy-link" %>
         </p>
       </div>
