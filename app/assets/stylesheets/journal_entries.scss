@@ -19,6 +19,59 @@ a {
   color: white;
 }
 
+.new_user {
+  background-color: #00548f;
+  width: 50%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.new_user > a {
+  margin: 15px 0 0 15px;
+}
+
+.field > label {
+  color: white;
+}
+
+.field > input {
+  height: 50px;
+}
+
+.field {
+  margin: 15px;
+}
+
+#remember-me {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+#user_remember_me {
+  margin: 0 10px 0 0;
+  width: 15px;
+  height: 15px;
+}
+
+.actions > input {
+  width: 50%;
+  height: 50px;
+  margin: 15px;
+  background-color: #0072bc;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .journal-header {
   display: flex;
   align-items: center;
