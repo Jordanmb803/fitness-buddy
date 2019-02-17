@@ -14,8 +14,8 @@ class ExercisesController < ApplicationController
   end
 
   def new
-    @last_session = Exercise.where(exercise: params[:exercise]).last
-    @exercise = Exercise.where(exercise: params[:exercise]).last
+    @last_session = Exercise.where(exercise: params[:exercise], journal_entry_id: params[:journal_entry_id]).last
+    @exercise = Exercise.where(exercise: params[:exercise], journal_entry_id: params[:journal_entry_id]).last
     @exercise ||= Exercise.new
   end
 
@@ -23,7 +23,8 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.find(params[:id])
     @exercise.update(exercise_params)
     @exercise.save
-    @journal_entry = JournalEntry.find_by(date: @exercise.date)
+    "!!!!!!!!!!!! exercise controller current user: #{current_user.id}"
+    @journal_entry = JournalEntry.find_by(date: @exercise.date, user_id: current_user.id)
     @exercise.update(journal_entry_id: @journal_entry.id)
     @exercise.save
 
@@ -33,7 +34,7 @@ class ExercisesController < ApplicationController
   def create
     @exercise = Exercise.create(exercise_params)
     @exercise.save
-    @journal_entry = JournalEntry.find_by(date: @exercise.date)
+    @journal_entry = JournalEntry.find_by(date: @exercise.date, user_id: current_user.id)
     @exercise.update(journal_entry_id: @journal_entry.id)
     @exercise.save
 
