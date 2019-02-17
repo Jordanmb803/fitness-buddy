@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190121225436) do
+ActiveRecord::Schema.define(version: 20190217064045) do
 
   create_table "exercises", force: :cascade do |t|
     t.integer  "journal_entry_id"
