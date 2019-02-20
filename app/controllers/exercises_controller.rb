@@ -11,12 +11,15 @@ class ExercisesController < ApplicationController
   def search
     @journal_entry = JournalEntry.find(params[:journal_entry_id])
     @exercise = Exercise.new(user_id: current_user.id)
+    @date = params[:date]
   end
 
   def new
     @last_session = Exercise.where(exercise: params[:exercise], user_id: current_user.id).last
     @exercise = Exercise.where(exercise: params[:exercise], user_id: current_user.id).last
     @exercise ||= Exercise.new(exercise: params[:exercise], user_id: current_user.id)
+    @exercise.date = params[:date]
+    @exercise.save
   end
 
   def update
