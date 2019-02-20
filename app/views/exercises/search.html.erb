@@ -1,6 +1,6 @@
 <%= form_tag exercises_new_path, class: "search-exercise"  do %>
   <h2 class="exercise-search-title">What exercise are you doing?</h2>
-  <%= text_field_tag :exercise %>
+  <%= text_field_tag :exercise, nil, placeholder: "Search for an exercise" %>
 
   <%= submit_tag 'Search Exercise', class: "submit-exercise" %>
 <% end %>
