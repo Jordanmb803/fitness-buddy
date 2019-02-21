@@ -1,7 +1,7 @@
 <% if @last_session.nil? %>
   <p> You've never done this exercise before </p>
 <% else %>
-  <p>On <%= @last_session.date %> you did <%= @last_session.exercise %>.
+  <p class="last-session">On <%= @last_session.date %> you did <%= @last_session.exercise %>.
   <%= @last_session.sets %> sets of <%= @last_session.reps %> with <%= @last_session.weight_in_lbs %>lbs.
   Notes: <%= @last_session.notes %></p>
 <% end %>

@@ -1,4 +1,4 @@
-<h2>Edit Entry</h2>
+<h2 class="edit-entry">Edit Entry</h2>
 <%= form_for @exercise, url: exercise_path, method: :put do |form| %>
     <%= form.text_field :exercise, class: "new-exercise-input", placeholder: "Exercise" %>
     <%= form.text_field :weight_in_lbs, class: "new-exercise-input", placeholder: "Weight In Lbs" %>

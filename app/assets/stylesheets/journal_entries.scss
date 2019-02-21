@@ -1,15 +1,8 @@
-html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 45px;
+  font-size: 25px;
   margin: 0;
   padding: 0;
   background-color: lightgray;
@@ -52,7 +45,7 @@ a {
 }
 
 .new_user > a {
-  margin: 15px 0 0 15px;
+  margin: 15px 0;
   color: #00548f;
   width: 100%;
 }
@@ -63,8 +56,8 @@ a {
 }
 
 .field > input {
-  font-size: 40px;
-  height: 100px;
+  font-size: 25px;
+  height: 75px;
   width: 100%;
   border-bottom: 1px solid gray;
 }
@@ -74,7 +67,7 @@ a {
 }
 
 .field {
-  margin: 75px;
+  margin: 15px;
   width: 80%;
 }
 
@@ -84,11 +77,11 @@ a {
   justify-content: center;
   align-content: center;
   align-items: center;
-  margin: 50px 0;
+  margin: 20px 0;
 }
 
 #remember-me > label {
-  width: 40%;
+  width: 50%;
 }
 
 #user_remember_me {
@@ -99,9 +92,9 @@ a {
 
 .actions > input {
   width: 100%;
-  height: 100px;
-  margin: 100px 0;
-  font-size: 40px;
+  height: 75px;
+  margin: 25px 0;
+  font-size: 25px;
   background-color: #0072bc;
   color: white;
 }
@@ -123,13 +116,13 @@ a {
 }
 
 .journal-header > a {
-  width: 75px;
-  height: 75px;
-  margin: 0 25px;
+  width: 25px;
+  height: 25px;
+  margin: 0 15px;
 }
 
 .header {
-  font-size: 1.75em;
+  font-size: 30px;
 }
 
 .exercises {
@@ -152,9 +145,9 @@ a {
 }
 
 .exercise {
-  font-size: 40px;
+  font-size: 25px;
   width: 100%;
-  height: 100px;
+  height: 35px;
   margin: 0;
   padding-left: 5px;
   display: flex;
@@ -168,6 +161,7 @@ a {
   width: 100%;
   margin: 0;
   padding: 5px;
+  font-size: 20px;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
@@ -175,6 +169,10 @@ a {
 
 .exercise-row > a {
   color: black;
+}
+
+.e-r-contents {
+  font-size: 20px;
 }
 
 .mid-column {
@@ -195,10 +193,12 @@ a {
   background-color: white;
   padding: 7px;
   width: 100%;
+  font-size: 20px;
 }
 
 .sign-out {
+  font-size: 12px;
   position: fixed;
   top: 15px;
-  right: 50px;
+  right: 15px;
 }
