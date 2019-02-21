@@ -1,4 +1,3 @@
-<% puts "#{@exercise.exercise}, #{@exercise.weight_in_lbs}, #{@exercise.sets}, #{@exercise.reps}"%>
 <%= form_for @exercise, url: exercises_path, method: :post do |form| %>
     <%= form.text_field :exercise, class: "new-exercise-input", placeholder: "Exercise" %>
     <%= form.text_field :weight_in_lbs, class: "new-exercise-input", placeholder: "Weight In Lbs" %>

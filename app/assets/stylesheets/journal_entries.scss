@@ -27,6 +27,11 @@ a {
   margin: 0;
 }
 
+.arrow {
+  width: 100%;
+  height: 100%;
+}
+
 .new_user {
   background-color: white;
   width: 100%;
@@ -111,10 +116,20 @@ a {
 .journal-header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   background-color: #0072bc;
   color: white;
+}
+
+.journal-header > a {
+  width: 75px;
+  height: 75px;
+  margin: 0 25px;
+}
+
+.header {
+  font-size: 1.75em;
 }
 
 .exercises {
@@ -158,6 +173,10 @@ a {
   box-sizing: border-box;
 }
 
+.exercise-row > a {
+  color: black;
+}
+
 .mid-column {
   width: 200px;
 }
@@ -180,6 +199,6 @@ a {
 
 .sign-out {
   position: fixed;
-  top: 2px;
-  right: 20px;
+  top: 15px;
+  right: 50px;
 }
