@@ -1,9 +1,9 @@
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "sign-out" %>
 
 <div class="journal-header">
-  <p><%= link_to 'Yesterday', select_date_path(date: @journal_entry.date - 1.day) %></p>
+  <%= link_to image_tag("left-arrows-2x.png", class: "arrow" ), select_date_path(date: @journal_entry.date - 1.day) %>
   <h1 class="header"><%= @journal_entry.date %></h1>
-  <p><%= link_to 'Tomorrow', select_date_path(date: @journal_entry.date + 1.day) %></p>
+  <%= link_to image_tag("right-arrows-2x copy.png", class: "arrow"), select_date_path(date: @journal_entry.date + 1.day) %>
 </div>
 
 <div class="exercises">
@@ -13,18 +13,20 @@
         <%= exercise.exercise %>
       </h3>
 
-      <div class="exercise-row">
-        <p class="e-r-contents">
-          Sets: <%= exercise.sets %>, Reps: <%= exercise.reps %>, Lbs: <%= exercise.weight_in_lbs %>
+      <%= link_to edit_exercise_path(exercise) do %>
+        <div class="exercise-row">
+          <p class="e-r-contents">
+            Sets: <%= exercise.sets %>, Reps: <%= exercise.reps %>, Lbs: <%= exercise.weight_in_lbs %>
+          </p>
+          <p class="e-r-contents">
+            <%= link_to '...', exercise_path(exercise), method: :delete, class: "destroy-link" %>
+          </p>
+        </div>
+        <p class="large-row exercise-row">
+          Notes:
+          <%= exercise.notes %>
         </p>
-        <p class="e-r-contents">
-          <%= link_to '...', exercise_path(exercise), method: :delete, class: "destroy-link" %>
-        </p>
-      </div>
-      <p class="large-row exercise-row">
-        Notes:
-        <%= exercise.notes %>
-      </p>
+      <% end %>
     </div>
   <% end %>
 
