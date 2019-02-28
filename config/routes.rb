@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'menu/show'
+
   devise_for :users
   get 'exercises/index'
 

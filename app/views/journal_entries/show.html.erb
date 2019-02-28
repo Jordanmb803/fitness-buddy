@@ -1,4 +1,4 @@
-<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "sign-out" %>
+<%= link_to "...", menu_show_path, method: :get, class: "menu-icon" %>
 
 <div class="journal-header">
   <%= link_to image_tag("left-arrows-2x.png", class: "arrow" ), select_date_path(date: @journal_entry.date - 1.day) %>
