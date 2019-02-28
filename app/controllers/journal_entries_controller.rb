@@ -8,7 +8,6 @@ class JournalEntriesController < ApplicationController
     else
       @date ||= Date.today
       @journal_entry = JournalEntry.find_by(date: @date, user_id: current_user.id)
-      puts "******************** Current User is: #{current_user.id}"
       @journal_entry ||= JournalEntry.create(date: Date.today, user_id: current_user.id)
       @exercises = Exercise.where(journal_entry_id: @journal_entry.id)
     end 

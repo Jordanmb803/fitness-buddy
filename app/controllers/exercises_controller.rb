@@ -19,7 +19,6 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.where(exercise: params[:exercise], user_id: current_user.id).last
     @exercise ||= Exercise.new(exercise: params[:exercise], user_id: current_user.id)
     @exercise.date = params[:date]
-    @exercise.save
   end
 
   def edit
@@ -43,8 +42,8 @@ class ExercisesController < ApplicationController
     @journal_entry = JournalEntry.find_by(date: @exercise.date, user_id: current_user.id)
     @exercise.update(journal_entry_id: @journal_entry.id, user_id: current_user.id)
     @exercise.save
-
-    redirect_to journal_entry_path(@journal_entry)
+puts "******************* Date: #{@journal_entry.date}***************************"
+    redirect_to select_date_path(date: @journal_entry.date)
   end
 
   def destroy

@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: lightgray;
+  zoom: 1;
 }
 
 a {
@@ -36,6 +37,7 @@ a {
 }
 
 .new_user > h2 {
+  box-sizing: border-box;
   background-color: #00548f;
   color: white;
   width: 100%;
@@ -45,6 +47,8 @@ a {
 }
 
 .new_user > a {
+  box-sizing: border-box;
+  padding: 0 10px;
   margin: 15px 0;
   color: #00548f;
   width: 100%;
@@ -81,7 +85,7 @@ a {
 }
 
 #remember-me > label {
-  width: 50%;
+  width: 25%;
 }
 
 #user_remember_me {
@@ -189,9 +193,10 @@ a {
 }
 
 .link {
+  box-sizing: border-box;
   color: #00548f;
   background-color: white;
-  padding: 7px;
+  padding: 7px 0 7px 7px;
   width: 100%;
   font-size: 20px;
 }
