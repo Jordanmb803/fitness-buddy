@@ -10,14 +10,14 @@ class ExercisesController < ApplicationController
 
   def search
     @journal_entry = JournalEntry.find(params[:journal_entry_id])
-    @exercise = Exercise.new(user_id: current_user.id)
-    @date = params[:date]
+    @exercise      = Exercise.new(user_id: current_user.id)
+    @date          = params[:date]
   end
 
   def new
-    @last_session = Exercise.where(exercise: params[:exercise], user_id: current_user.id).last
-    @exercise = Exercise.where(exercise: params[:exercise], user_id: current_user.id).last
-    @exercise ||= Exercise.new(exercise: params[:exercise], user_id: current_user.id)
+    @last_session  = Exercise.where(exercise: params[:exercise], user_id: current_user.id).last
+    @exercise      = Exercise.where(exercise: params[:exercise], user_id: current_user.id).last
+    @exercise      ||= Exercise.new(exercise: params[:exercise], user_id: current_user.id)
     @exercise.date = params[:date]
   end
 
@@ -47,7 +47,7 @@ puts "******************* Date: #{@journal_entry.date}**************************
   end
 
   def destroy
-    @exercise = Exercise.find(params[:id])
+    @exercise      = Exercise.find(params[:id])
     @journal_entry = JournalEntry.find(@exercise.journal_entry_id)
     @exercise.destroy
 
