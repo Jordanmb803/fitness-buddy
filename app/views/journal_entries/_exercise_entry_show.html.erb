@@ -1,0 +1,23 @@
+  <h3 class="exercise">Exercises</h3>
+  <% @exercises.each do |exercise| %>
+    <div class="exercise-details">
+
+      <%= link_to edit_exercise_path(exercise) do %>
+        <div class="exercise-row">
+          <strong><%= exercise.exercise %></strong>
+          <p class="e-r-contents">
+            Sets: <%= exercise.sets %>, Reps: <%= exercise.reps %>, Lbs: <%= exercise.weight_in_lbs %>
+          </p>
+          <p class="e-r-contents">
+            <%= link_to image_tag("trash-icon", class: "trash-icon"), exercise_path(exercise), method: :delete, class: "destroy-link" %>
+          </p>
+        </div>
+        <p class="large-row exercise-row">
+          Notes:
+          <%= exercise.notes %>
+        </p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= link_to '+ Add Exercise', exercise_search_path(journal_entry_id: @journal_entry.id, date: @journal_entry.date), class: "link" %>

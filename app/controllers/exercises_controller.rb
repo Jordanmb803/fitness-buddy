@@ -51,7 +51,7 @@ class ExercisesController < ApplicationController
     @journal_entry = JournalEntry.find(@exercise.journal_entry_id)
     @exercise.destroy
 
-    redirect_to journal_entries_show_path(@journal_entry)
+    redirect_to select_date_path(date: @journal_entry.date)
   end
 
   private
