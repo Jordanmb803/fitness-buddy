@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190301002230) do
+ActiveRecord::Schema.define(version: 20190301180812) do
 
   create_table "exercises", force: :cascade do |t|
     t.integer  "journal_entry_id"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20190301002230) do
     t.integer  "goal_weight_in_lbs"
     t.integer  "weekly_goal_weight_loss_in_lbs"
     t.string   "activity_level"
+    t.integer  "daily_calorie_goal"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

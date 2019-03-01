@@ -22,6 +22,6 @@ class UsersController < ApplicationController
 
   private
   def goals_params
-    params.require(:user).permit(:starting_weight_in_lbs, :current_weight_in_lbs, :goal_weight_in_lbs, :weekly_goal_weight_loss_in_lbs, :activity_level)
+    params.require(:user).permit(:starting_weight_in_lbs, :current_weight_in_lbs, :goal_weight_in_lbs, :weekly_goal_weight_loss_in_lbs, :activity_level, :daily_calorie_goal)
   end
 end
