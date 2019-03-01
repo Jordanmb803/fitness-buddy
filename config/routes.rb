@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get 'search', to: 'exercises#search', as: :exercise_search
 
-  resources :exercises, :journal_entries, :exercise
+  resources :exercises, :journal_entries, :exercise, :food_entries
 
   root 'journal_entries#show'
 

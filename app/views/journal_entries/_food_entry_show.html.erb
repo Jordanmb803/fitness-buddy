@@ -1,0 +1,28 @@
+<h3 class="exercise">Food</h3>
+
+<div class="exercises">
+  <% if @food_entries %>
+    <% @food_entries.each do |fe| %>
+    <div class="exercise-details">
+      <%= link_to edit_food_entry_path(fe) do %>
+        <div class="exercise-row">
+        <strong><%= fe.name %></strong>
+        <p class="e-r-contents" >
+          Calories: <%= fe.calories_per_serving %>,
+          Protien: <%= fe.protien_per_servings %>,
+          Carbs: <%= fe.carbohydrates_per_serving %>,
+          Fat: <%= fe.fat_per_serving %>,
+          Servings: <%= fe.servings %>
+          </p>
+
+          <p class="e-r-contents">
+            <%= link_to image_tag("trash-icon", class: "trash-icon"), food_entry_path(fe), method: :delete, class: "destroy-link" %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  <% else %>
+    <p>No food entries today.</p>
+  <% end %>
+</div>

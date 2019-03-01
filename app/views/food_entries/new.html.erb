@@ -1,0 +1,15 @@
+<h1 class="search-title">New Entry</h1>
+
+<%= form_for @food_entry, url: food_entries_path(journal_entry_id: @journal_entry.id), method: :post do |form| %>
+    <%= form.text_field :name, class: "new-input", placeholder: "  Food name" %>
+    <%= form.text_field :servings, class: "new-input", placeholder: "  Servings" %>
+    <%= form.text_field :calories_per_serving, class: "new-input", placeholder: "  Calories per serving" %>
+    <%= form.text_field :protien_per_servings, class: "new-input", placeholder: "  Protien per serving" %>
+    <%= form.text_field :carbohydrates_per_serving, class: "new-input", placeholder: "  Carbs per serving" %>
+    <%= form.text_field :fat_per_serving, class: "new-input", placeholder: "  Fat per serving" %>
+    <%= form.text_field :sugar_per_serving, class: "new-input", placeholder: "  Sugar per serving" %>
+    <div>
+    <%= form.date_select :date, class: "", placeholder: "Date" %>
+    </div>
+    <%= form.submit "Submit Food Entry", class: "submit" %>
+<% end %>

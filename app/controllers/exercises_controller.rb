@@ -42,7 +42,7 @@ class ExercisesController < ApplicationController
     @journal_entry = JournalEntry.find_by(date: @exercise.date, user_id: current_user.id)
     @exercise.update(journal_entry_id: @journal_entry.id, user_id: current_user.id)
     @exercise.save
-puts "******************* Date: #{@journal_entry.date}***************************"
+
     redirect_to select_date_path(date: @journal_entry.date)
   end
 

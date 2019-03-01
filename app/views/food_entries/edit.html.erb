@@ -1,0 +1,14 @@
+<h2 class="edit-entry">Edit Entry</h2>
+<%= form_for @food_entry, url: food_entry_path, method: :put do |form| %>
+    <%= form.text_field :name, class: "new-input", placeholder: "Name" %>
+    <%= form.text_field :calories_per_serving, class: "new-input", placeholder: "Calories" %>
+    <%= form.text_field :protien_per_servings, class: "new-input", placeholder: "Protien" %>
+    <%= form.text_field :carbohydrates_per_serving, class: "new-input", placeholder: "Carbs" %>
+    <%= form.text_field :fat_per_serving, class: "new-input", placeholder: "Fat" %>
+    <%= form.text_field :sugar_per_serving, class: "new-input", placeholder: "Sugar" %>
+    <%= form.text_field :servings, class: "new-input", placeholder: "Servings" %>
+    <div>
+    <%= form.date_select :date, class: "new-date-select", placeholder: "Date" %>
+    </div>
+    <%= form.submit "Submit", class: "submit" %>
+<% end %>

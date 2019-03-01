@@ -1,12 +1,12 @@
 <h2 class="edit-entry">Edit Entry</h2>
 <%= form_for @exercise, url: exercise_path, method: :put do |form| %>
-    <%= form.text_field :exercise, class: "new-exercise-input", placeholder: "Exercise" %>
-    <%= form.text_field :weight_in_lbs, class: "new-exercise-input", placeholder: "Weight In Lbs" %>
-    <%= form.text_field :sets, class: "new-exercise-input", placeholder: "Sets" %>
-    <%= form.text_field :reps, class: "new-exercise-input", placeholder: "Reps" %>
+    <%= form.text_field :exercise, class: "new-input", placeholder: "Exercise" %>
+    <%= form.text_field :weight_in_lbs, class: "new-input", placeholder: "Weight In Lbs" %>
+    <%= form.text_field :sets, class: "new-input", placeholder: "Sets" %>
+    <%= form.text_field :reps, class: "new-input", placeholder: "Reps" %>
     <div>
-    <%= form.date_select :date, class: "new-exercise-date-select", placeholder: "Date" %>
+    <%= form.date_select :date, class: "new-date-select", placeholder: "Date" %>
     </div>
     <%= form.text_area :notes, class: "new-exercise-text-area", placeholder: "Notes" %>
-    <%= form.submit "Submit Exercise", class: "submit-exercise" %>
+    <%= form.submit "Submit", class: "submit" %>
 <% end %>

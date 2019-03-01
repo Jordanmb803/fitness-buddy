@@ -34,7 +34,7 @@ input, textarea {
   height: 100vh;
 }
 
-.exercise-search-title {
+.search-title {
   color: white;
   background-color: #0072bc;
   width: 100%;
@@ -53,11 +53,11 @@ input, textarea {
   align-items: center;
 }
 
-.new-exercise-input:focus {
+.new-input:focus {
   outline: none;
 }
 
-.submit-exercise {
+.submit {
   margin: 50px 0;
   background: #0072bc;
   color:  white;
@@ -110,7 +110,7 @@ input, textarea {
   font-size: 40px;
 }
 
-.new-exercise-input {
+.new-input {
   margin: 0;
   border-bottom: 1px solid grey;
   width: 100%;

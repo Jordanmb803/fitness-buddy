@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190217082421) do
+ActiveRecord::Schema.define(version: 20190301002230) do
 
   create_table "exercises", force: :cascade do |t|
     t.integer  "journal_entry_id"
@@ -26,6 +26,21 @@ ActiveRecord::Schema.define(version: 20190217082421) do
     t.integer  "user_id"
   end
 
+  create_table "food_entries", force: :cascade do |t|
+    t.integer  "servings"
+    t.integer  "calories_per_serving"
+    t.integer  "protien_per_servings"
+    t.integer  "carbohydrates_per_serving"
+    t.integer  "fat_per_serving"
+    t.integer  "sugar_per_serving"
+    t.integer  "user_id"
+    t.integer  "journal_entry_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.date     "date"
+    t.string   "name"
+  end
+
   create_table "journal_entries", force: :cascade do |t|
     t.date     "date"
     t.datetime "created_at", null: false
@@ -34,18 +49,23 @@ ActiveRecord::Schema.define(version: 20190217082421) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                          default: "", null: false
+    t.string   "encrypted_password",             default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                  default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "starting_weight_in_lbs"
+    t.integer  "current_weight_in_lbs"
+    t.integer  "goal_weight_in_lbs"
+    t.integer  "weekly_goal_weight_loss_in_lbs"
+    t.string   "activity_level"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

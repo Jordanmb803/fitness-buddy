@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  servings: 1
+  calories_per_serving: 1
+  protien_per_servings: 1
+  carbohydrates_per_serving: 1
+  fat_per_serving: 1
+  sugar_per_serving: 1
+  user_id: 1
+  journal_entry_id: 1
+
+two:
+  servings: 1
+  calories_per_serving: 1
+  protien_per_servings: 1
+  carbohydrates_per_serving: 1
+  fat_per_serving: 1
+  sugar_per_serving: 1
+  user_id: 1
+  journal_entry_id: 1
