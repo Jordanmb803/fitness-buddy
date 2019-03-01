@@ -1,0 +1,11 @@
+<h2 class="edit-entry">Update Goals</h2>
+<%= form_for @user, url: update_goals_path(@user), method: :put do |form| %>
+    <%= form.text_field :starting_weight_in_lbs, class: "new-input", placeholder: "Starting Weight" %>
+    <%= form.text_field :current_weight_in_lbs, class: "new-input", placeholder: "Current Weight" %>
+    <%= form.text_field :goal_weight_in_lbs, class: "new-input", placeholder: "Goal Weight" %>
+    <%= form.text_field :weekly_goal_weight_loss_in_lbs, class: "new-input", placeholder: "Weekly Goal Weight Loss" %>
+    <%= form.text_field :activity_level, class: "new-input", placeholder: "Activity Level" %>
+    <div>
+    </div>
+    <%= form.submit "Submit", class: "submit" %>
+<% end %>

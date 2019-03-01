@@ -31,6 +31,6 @@
 
   <%= link_to '+ Add Exercise', exercise_search_path(journal_entry_id: @journal_entry.id, date: @journal_entry.date), class: "link" %>
 
-  <%= render "food_entry_show", locals: { food_entries: @food_entries } %>
+  <%= render "food_entry_show", locals: { food_entries: @food_entries, calorie_total: @calorie_total } %>
   <%= link_to '+ Add Food', new_food_entry_path(journal_entry_id: @journal_entry.id, date: @journal_entry.date), class: "link" %>
 </div>

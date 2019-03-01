@@ -41,6 +41,6 @@ class FoodEntriesController < ApplicationController
 
   private
   def food_entry_params
-    params.require(:food_entry).permit(:calories_per_serving, :protien_per_servings, :carbohydrates_per_serving, :fat_per_serving, :sugar_per_serving, :servings, :date)
+    params.require(:food_entry).permit(:name, :calories_per_serving, :protien_per_servings, :carbohydrates_per_serving, :fat_per_serving, :sugar_per_serving, :servings, :date)
   end
 end

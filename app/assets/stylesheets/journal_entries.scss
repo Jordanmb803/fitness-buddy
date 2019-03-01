@@ -206,3 +206,17 @@ a {
   width: 25px;
   height: 25px;
 }
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #00548f;
+  width: 100%;
+  align-items: center;
+  color: white;
+  height: 35px;
+}
+
+.category-header > p {
+  margin-right: 15px;
+}

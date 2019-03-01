@@ -14,7 +14,11 @@ Rails.application.routes.draw do
 
   get 'search', to: 'exercises#search', as: :exercise_search
 
-  resources :exercises, :journal_entries, :exercise, :food_entries
+  get 'edit_goals/:id', to: 'users#edit_goals', as: :edit_goals
+
+  put 'update_goals/:id', to: 'users#update_goals', as: :update_goals
+
+  resources :exercises, :journal_entries, :exercise, :food_entries, :users
 
   root 'journal_entries#show'
 

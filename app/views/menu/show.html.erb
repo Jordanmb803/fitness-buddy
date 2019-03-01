@@ -2,4 +2,5 @@
 
 <h2><%= @user.email %></h2>
 
+<%= link_to "Goals", edit_goals_path(current_user.id), method: :get, class: "sign-out" %>
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "sign-out" %>
