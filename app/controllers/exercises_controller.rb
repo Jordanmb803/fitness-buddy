@@ -33,7 +33,7 @@ class ExercisesController < ApplicationController
     @exercise.update(journal_entry_id: @journal_entry.id)
     @exercise.save
 
-    redirect_to journal_entry_path(@journal_entry)
+    redirect_to select_date_path(date: @journal_entry.date)
   end
 
   def create

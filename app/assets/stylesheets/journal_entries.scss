@@ -85,7 +85,7 @@ a {
 }
 
 #remember-me > label {
-  width: 25%;
+  width: 35%;
 }
 
 #user_remember_me {
@@ -220,4 +220,40 @@ a {
 
 .category-header > p {
   margin-right: 15px;
+}
+
+.calorie-summary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  background-color: white;
+  border-bottom: 8px solid lightgray;
+}
+
+.calorie-summary > strong {
+  padding-left: 8%;
+}
+
+.calorie-summary > div { 
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.calorie-summary > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calorie-summary > div > div > strong {
+  color: green;
+}
+
+.calorie-summary > div > div > p {
+  margin: 0;
+  font-size: 15px;
 }

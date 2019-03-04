@@ -6,6 +6,11 @@
   <%= link_to image_tag("right-arrows-2x copy.png", class: "arrow"), select_date_path(date: @journal_entry.date + 1.day) %>
 </div>
 
+<div class="calorie-summary">
+  <strong>Calories Remaining</strong>
+  <div><div><%= @daily_calorie_goal %> <p>Goal</p></div> - <div><%= @calorie_total %><p>Food</p></div> = <div><strong><%= @calories_left %></strong><p>Remaining</p></p></div></div>
+</div>
+
 <div class="exercises">
   <%= render "exercise_entry_show", locals: { exercises: @exercises, journal_entry: @journal_entry } %>
   <%= render "food_entry_show", locals: { food_entries: @food_entries, calorie_total: @calorie_total } %>

@@ -12,6 +12,10 @@ class JournalEntriesController < ApplicationController
       @exercises     =   Exercise.where(journal_entry_id: @journal_entry.id)
       @food_entries  =   FoodEntry.where(journal_entry_id: @journal_entry.id)
       @calorie_total =   @food_entries.sum(:calories_per_serving)
+      @calorie_total ||= 0
+      @daily_calorie_goal = User.find(current_user.id).daily_calorie_goal
+      @daily_calorie_goal ||= 2000
+      @calories_left = @daily_calorie_goal - @calorie_total
     end 
   end
   
@@ -28,6 +32,10 @@ class JournalEntriesController < ApplicationController
     @exercises     =   Exercise.where(journal_entry_id: @journal_entry.id)
     @food_entries  =   FoodEntry.where(journal_entry_id: @journal_entry.id)
     @calorie_total =   @food_entries.sum(:calories_per_serving)
+    @calorie_total ||= 0
+    @daily_calorie_goal = User.find(current_user.id).daily_calorie_goal
+    @daily_calorie_goal ||= 2000
+    @calories_left = @daily_calorie_goal - @calorie_total
 
     render "journal_entries/show"
   end
