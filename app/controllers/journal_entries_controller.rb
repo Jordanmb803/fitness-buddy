@@ -43,4 +43,5 @@ class JournalEntriesController < ApplicationController
   def daily_calorie_goal
     daily_calorie_goal = User.find(current_user.id).daily_calorie_goal
     daily_calorie_goal ||= 2000
+  end
 end
