@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190301180812) do
+ActiveRecord::Schema.define(version: 20190308191948) do
 
   create_table "exercises", force: :cascade do |t|
     t.integer  "journal_entry_id"
@@ -49,12 +49,12 @@ ActiveRecord::Schema.define(version: 20190301180812) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                          default: "", null: false
-    t.string   "encrypted_password",             default: "", null: false
+    t.string   "email",                          default: "",   null: false
+    t.string   "encrypted_password",             default: "",   null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                  default: 0,  null: false
+    t.integer  "sign_in_count",                  default: 0,    null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20190301180812) do
     t.integer  "goal_weight_in_lbs"
     t.integer  "weekly_goal_weight_loss_in_lbs"
     t.string   "activity_level"
-    t.integer  "daily_calorie_goal"
+    t.integer  "daily_calorie_goal",             default: 2000
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
