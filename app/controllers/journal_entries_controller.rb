@@ -13,12 +13,6 @@ class JournalEntriesController < ApplicationController
       @calories_left      = @daily_calorie_goal - @calorie_total
     end 
   end
-  
-  def destroy
-    JournalEntry.find(params[:id]).destroy
-    
-    redirect_to select_date(date: Date.today)
-  end
 
   def select_date
     date = params[:date]
