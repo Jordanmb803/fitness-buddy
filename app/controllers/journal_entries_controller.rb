@@ -15,9 +15,9 @@ class JournalEntriesController < ApplicationController
   end
   
   def destroy
-    @journal_entry = JournalEntry.find(params[:id]).destroy
+    JournalEntry.find(params[:id]).destroy
     
-    redirect_to journal_entries_path
+    redirect_to select_date(date: Date.today)
   end
 
   def select_date
