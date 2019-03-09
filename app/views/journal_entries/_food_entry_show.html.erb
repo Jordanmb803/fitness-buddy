@@ -25,4 +25,5 @@
   <% else %>
     <p>No food entries today.</p>
   <% end %>
+  <%= link_to '+ Add Food', new_food_entry_path(journal_entry_id: @journal_entry.id, date: @journal_entry.date), class: "link" %>
 </div>
