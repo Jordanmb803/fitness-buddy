@@ -4,6 +4,8 @@ class JournalEntriesController < ApplicationController
   def show
     @journal_entry      = JournalEntry.find(params[:id])
     @exercises          = Exercise.where(journal_entry_id: @journal_entry.id)
+    @weigh_in           = WeighIn.find_by(date: @journal_entry.date, user_id: current_user.id)
+    puts "Weigh in: #{@weigh_in} ****************"
     @food_entries       = FoodEntry.where(journal_entry_id: @journal_entry.id)
     @calorie_total      = calorie_total(@food_entries)
     @daily_calorie_goal = daily_calorie_goal

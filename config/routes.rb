@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'weigh_ins/show'
+
+  get 'weigh_ins/index'
+
+  get 'weigh_ins/edit'
+
+  get 'weigh_ins/new'
+
   get 'menu/show'
 
   devise_for :users
@@ -18,7 +26,7 @@ Rails.application.routes.draw do
 
   put 'update_goals/:id', to: 'users#update_goals', as: :update_goals
 
-  resources :exercises, :journal_entries, :exercise, :food_entries, :users
+  resources :exercises, :journal_entries, :exercise, :food_entries, :users, :weigh_ins
 
   root 'journal_entries#select_date'
 
