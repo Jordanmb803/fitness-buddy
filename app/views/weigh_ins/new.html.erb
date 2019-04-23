@@ -1,0 +1,7 @@
+<%= form_for @weigh_in, url: weigh_ins_path(date: @weigh_in.date), method: :post do |form| %>
+    <%= form.text_field :weight_in_lbs, class: "new-input", placeholder: "Weight In Lbs" %>
+    <div>
+    <%= form.date_select :date, class: "new-exercise-date-select", placeholder: "Date" %>
+    </div>
+    <%= form.submit "Submit Weigh In", class: "submit" %>
+<% end %>

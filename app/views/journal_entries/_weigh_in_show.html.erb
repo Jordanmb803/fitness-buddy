@@ -1,0 +1,15 @@
+<div class="category-header"><h3 class="exercise">Daily Weigh In</h3></div>
+
+<div class="exercises">
+  <% if @weigh_in %>
+    <div class="exercise-details">
+      <div class="exercise-row">
+        <p>
+          <%= @weigh_in.weight_in_lbs %>lbs
+        </p>
+      </div>
+      </div>
+  <% else %>
+    <%= link_to "+ Weigh In", weigh_ins_new_path(date: @journal_entry.date), class: "link" %>
+  <% end %>
+</div>
